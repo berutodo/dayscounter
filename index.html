@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        * {
+            color: hsl(0, 1%, 44%)
+        }
+        
+        body {
+            background-color: hsl(0, 0%, 86%);
+        }
+        
+        .button {
+            border-radius: 50%;
+            border: none;
+            width: 50px;
+            height: 50px;
+            background-color: hsl(259, 100%, 65%);
+        }
+        
+        .header {
+            display: flex;
+            align-self: flex-start;
+            padding: 20px;
+            gap: 10px;
+        }
+        
+        .header div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header div input {
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        
+        .header div input::placeholder {
+            font-size: large;
+            font-weight: 600;
+            padding: 10px;
+        }
+        
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            padding: 40px;
+            height: 300px;
+            font-size: 3em;
+        }
+        
+        .footer div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 80px;
+            gap: 40px;
+        }
+        
+        .footer div h1 {
+            color: hsl(259, 100%, 65%);
+            font-style: italic;
+        }
+        
+        .footer div h2 {
+            color: black;
+        }
+        
+        .card {
+            margin: 0 auto;
+            width: 600px;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 10px 10px 100px 10px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .middle {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .linha {
+            width: 100%;
+            height: 1px;
+            background-color: hsl(0, 0%, 86%);
+        }
+    </style>
+
+</head>
+<script src="main.js"></script>
+
+<body>
+    <div class="card">
+        <div class="header">
+            <div>
+                <h5>Day</h5>
+                <input type="text" id="day" placeholder="DD">
+            </div>
+            <div>
+                <h5>
+                    Month
+                </h5> <input id="month" id="month" type="text" placeholder="MM">
+            </div>
+            <div>
+                <h5>Year</h5> <input id="year" id="year" type="text" placeholder="YYYY">
+            </div>
+        </div>
+        <div class="middle">
+            <div class="linha"></div><img class="button" onclick="calculateAge()" src="./assets/images/icon-arrow.svg" alt="" />
+        </div>
+        <div class="footer">
+            <div>
+                <h1 id="yearPut">--</h1>
+                <h2>years</h2>
+            </div>
+            <div>
+                <h1 id="monthPut">--</h1>
+                <h2>months</h2>
+            </div>
+
+            <div>
+                <h1 id="dayPut">--</h1>
+                <h2>days</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
