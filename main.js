@@ -25,13 +25,12 @@ function calculateAge() {
     const diferencaEmDias = diferencaEmMilissegundos / (1000 * 60 * 60 * 24);
     const diferencaEmAnos = diferencaEmDias / 365.25;
     const restoMes = (diferencaEmDias % 365) / 12
-    const restoDia = (diferencaEmDias % 365) / 12
-    console.log(restoMes)
+    const restoDia = (diferencaEmDias % 365) % 12
+    console.log(restoMes, restoDia)
     diasEnviar.innerText = Math.round(restoDia);
     anoEnviar.innerText = Math.round(diferencaEmAnos);
     mesEnviar.innerText = Math.round(restoMes);
 
-    console.log(diferencaEmDias, diferencaEmAnos, diferencaEmMeses);
 
 }
 
