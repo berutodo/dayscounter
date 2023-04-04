@@ -16,16 +16,21 @@ function calculateAge() {
     if (month.value > 12) {
         return alert("Mês errado")
     }
+    if (year.value > 2023) {
+        return alert("Ano não pode ser futuro")
+    }
     // Cria um novo objeto Date com a data recebida
     const dataRecebida = new Date(year.value, month.value - 1, day.value);
     const diferencaEmMilissegundos = actualDate - dataRecebida;
     const diferencaEmDias = diferencaEmMilissegundos / (1000 * 60 * 60 * 24);
     const diferencaEmAnos = diferencaEmDias / 365.25;
     const diferencaEmMeses = (actualDate.getFullYear() - dataRecebida.getFullYear()) * 12 + (actualDate.getMonth() - dataRecebida.getMonth());
-
-    diasEnviar.innerText = Math.round(diferencaEmDias);
+    const restoMes = (diferencaEmDias % 365) / 12
+    const restoDia = (diferencaEmDias % 365) / 12
+    console.log(restoMes)
+    diasEnviar.innerText = Math.round(restoDia);
     anoEnviar.innerText = Math.round(diferencaEmAnos);
-    mesEnviar.innerText = Math.round(diferencaEmMeses);
+    mesEnviar.innerText = Math.round(restoMes);
 
     console.log(diferencaEmDias, diferencaEmAnos, diferencaEmMeses);
 
