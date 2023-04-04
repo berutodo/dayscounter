@@ -24,7 +24,6 @@ function calculateAge() {
     const diferencaEmMilissegundos = actualDate - dataRecebida;
     const diferencaEmDias = diferencaEmMilissegundos / (1000 * 60 * 60 * 24);
     const diferencaEmAnos = diferencaEmDias / 365.25;
-    const diferencaEmMeses = (actualDate.getFullYear() - dataRecebida.getFullYear()) * 12 + (actualDate.getMonth() - dataRecebida.getMonth());
     const restoMes = (diferencaEmDias % 365) / 12
     const restoDia = (diferencaEmDias % 365) / 12
     console.log(restoMes)
@@ -34,4 +33,19 @@ function calculateAge() {
 
     console.log(diferencaEmDias, diferencaEmAnos, diferencaEmMeses);
 
+}
+
+function verifyMonth(dia, mes) {
+    const trintaDias = [4, 6, 9, 11]
+    if (trintaDias.includes(mes)) {
+        if (dia > 31) {
+            alert("Mês com numeração errada")
+        }
+    }
+    if (mes === 2) {
+        if (dia > 29) {
+            alert("Fevereiro com mais de 29 dias")
+
+        }
+    }
 }
